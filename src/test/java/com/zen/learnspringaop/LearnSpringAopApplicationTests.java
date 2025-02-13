@@ -1,4 +1,4 @@
-package com.zen.learn_spring_aop;
+package com.zen.learnspringaop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
