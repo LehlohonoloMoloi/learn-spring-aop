@@ -1,5 +1,6 @@
 package com.zen.learnspringaop.service;
 
+import com.zen.learnspringaop.annotation.TrackTime;
 import com.zen.learnspringaop.data.DataService;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class BusinessService {
         this.dataService = dataService;
     }
 
+    @TrackTime
     public int calculateSum() {
         int[] data = dataService.retrieveData();
 
