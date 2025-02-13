@@ -20,4 +20,8 @@ public class BusinessService1 {
         return Arrays.stream(data).sum();
     }
 
+    public int simulateException() {
+        throw new RuntimeException("Exception thrown from BusinessService1");
+    }
+
 }

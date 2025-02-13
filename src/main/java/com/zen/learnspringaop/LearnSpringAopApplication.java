@@ -24,6 +24,7 @@ public class LearnSpringAopApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("Value returned is {}", businessService1.calculateSum());
+//		logger.info("Exception thrown: {}", businessService1.simulateException());
 	}
 
 }
