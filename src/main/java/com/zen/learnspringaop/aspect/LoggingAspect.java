@@ -18,22 +18,22 @@ public class LoggingAspect {
 
     // What kind of method calls I would intercept
     // execution(* PACKAGE.*.*(..))
-    @Before("execution(* com.zen.learnspringaop.service.*.*(..))")
+    @Before("com.zen.learnspringaop.aspect.CommonPointcutConfig.servicePackageConfig()")
     public void logMethodCallBeforeExecution(JoinPoint joinPoint) {
         logger.info("Before Aspect: Logging method call - {}", joinPoint);
     }
 
-    @After("execution(* com.zen.learnspringaop.service.*.*(..))")
+    @After("com.zen.learnspringaop.aspect.CommonPointcutConfig.servicePackageConfig()")
     public void logMethodCallAfterExecution(JoinPoint joinPoint) {
         logger.info("After Aspect: {} method has executed", joinPoint);
     }
 
-    @AfterThrowing(pointcut = "execution(* com.zen.learnspringaop.service.*.*(..))", throwing = "exception")
+    @AfterThrowing(pointcut = "com.zen.learnspringaop.aspect.CommonPointcutConfig.servicePackageConfig()", throwing = "exception")
     public void logMethodCallAfterThrowingException(JoinPoint joinPoint, Exception exception) {
         logger.error("After Throwing Aspect: Exception thrown by {} method - {}", joinPoint, exception.toString());
     }
 
-    @AfterReturning(pointcut = "execution(* com.zen.learnspringaop.service.*.*(..))", returning = "result")
+    @AfterReturning(pointcut = "com.zen.learnspringaop.aspect.CommonPointcutConfig.servicePackageConfig()", returning = "result")
     public void logMethodCallAfterReturning(JoinPoint joinPoint, Object result) {
         logger.info("After Returning Aspect: {} method has returned - {}", joinPoint, result);
     }
