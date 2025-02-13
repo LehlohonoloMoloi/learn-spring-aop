@@ -1,21 +1,21 @@
 package com.zen.learnspringaop.service;
 
-import com.zen.learnspringaop.data.DataService1;
+import com.zen.learnspringaop.data.DataService;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
 @Service
-public class BusinessService1 {
+public class BusinessService {
 
-    private DataService1 dataService1;
+    private DataService dataService;
 
-    public BusinessService1(DataService1 dataService1) {
-        this.dataService1 = dataService1;
+    public BusinessService(DataService dataService) {
+        this.dataService = dataService;
     }
 
     public int calculateSum() {
-        int[] data = dataService1.retrieveData();
+        int[] data = dataService.retrieveData();
 
         return Arrays.stream(data).sum();
     }
